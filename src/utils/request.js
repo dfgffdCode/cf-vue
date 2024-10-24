@@ -1,8 +1,8 @@
 import axios from 'axios'
-import defaultSettings from '@/settings'
+// import defaultSettings from '@/settings'
 
 const service = axios.create({
-    baseURL: defaultSettings.domain,
+    baseURL: 'http://localhost:8080',
     timeout: 20000
 })
 
@@ -37,8 +37,12 @@ service.interceptors.request.use(
     }
 )
 
-// service.interceptors.response.use(res => {
-
-// })
+service.interceptors.response.use(
+  res => res.data,
+  error => {
+    console.log('err' + error) // for debug
+    return Promise.reject(error)
+  }
+)
 
 export default service

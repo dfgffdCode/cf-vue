@@ -1,5 +1,6 @@
 <template>
 <div class="waterfall-container">
+  <button @click="getMenu" />
     <Waterfall :list="imageList" :gutter="10" :lazyLoad="true" :debounce="200">
         <template #default="{ item }">
             <div class="image-item">
@@ -11,6 +12,7 @@
 </template>
 
 <script setup>
+import { getMenuList } from '@/api/Menu';
 import { ref } from 'vue';
 import { Waterfall } from 'vue-waterfall-plugin-next';
 
@@ -46,6 +48,10 @@ const imageList = ref([{
             image: 'https://tse1-mm.cn.bing.net/th/id/OIP-C.BD8Gun2dXm_3Zuue4HVmJAHaKX?w=197&h=275&c=7&r=0&o=5&pid=1.7'
         },
     ]);
+
+function getMenu() {
+    getMenuList()
+}
 
 </script>
 

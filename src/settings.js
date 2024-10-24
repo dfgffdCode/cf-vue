@@ -1,5 +1,5 @@
 module.exports = {
 
-    domain: 'https://www.xiu01.top/'
+    domain: 'https://www.xiu01.top'
     
 }

@@ -1,8 +1,7 @@
 import axios from 'axios'
-// import defaultSettings from '@/settings'
 
 const service = axios.create({
-    baseURL: 'http://localhost:8080',
+    baseURL: window.location.origin,
     timeout: 20000
 })
 

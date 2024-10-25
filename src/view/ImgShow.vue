@@ -1,6 +1,6 @@
 <template>
 <div class="waterfall-container">
-  <button @click="getMenu" />
+  <button @click="getMenu">点击</button>
     <Waterfall :list="imageList" :gutter="10" :lazyLoad="true" :debounce="200">
         <template #default="{ item }">
             <div class="image-item">
